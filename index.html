@@ -1,14 +1,163 @@
 <!DOCTYPE html>
 <html lang="en-ca">
 <head>
-	<meta charset="utf-8">
-	<title>Quynh Nguyen's Page</title>
+    <meta charset="utf-8">
+    <title>Quynh Nguyen</title>
+    <meta name="handheldfriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Quynh Nguyen Portfolio" >
+
+    <link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/typography.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/freewall.js"></script>
+    <script src="js/jquery.slick.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#slideshow-container').slick({
+                dots: true
+            });
+
+            var wall = new freewall("#portfolio_grid");
+            wall.reset({
+                selector: '.item',
+                animate: true,
+                cellW: 200,
+                cellH: 'auto',
+                onResize: function() {
+                    wall.fitWidth();
+                }
+            });
+
+            var images = wall.container.find('.item');
+            images.find('img').load(function() {
+                wall.fitWidth();
+            });
+
+
+        });
+    </script>
 
 </head>
 <body>
+<header>
+    <ul class="nav">
+        <li class="active"><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <a href="#" class="logo"></a>
+    <div class="header_right">
+        <div class="name">
+            Quynh Nguyen
+        </div>
+        <a href="" class="social-icon"><i class="fa fa-behance"></i></a>
+        <a href="" class="social-icon"><i class="fa fa-linkedin"></i></a>
+    </div>
+</header>
+<section class="slideshow">
+    <div id="slideshow-container">
+        <div>
+            <h1>Hello,</h1>
+            <p>Nice to meet you!</p>
+        </div>
+        <div>
+            <h1>Hello2,</h1>
+            <p>Nice to meet you2!</p>
+        </div>
+    </div>
+</section>
+<section class="about grid">
+    <div class="unit unit-m-1 unit-l-1-3 unit-xl-1-4">
+        <h2 class="ribbon">About Me</h2>
+    </div>
+    <div class="unit unit-m-1 unit-l-2-3 unit-xl-3-4">
+        <p>My name is Quynh Nguyen, I am a graphic design and multimedia specialist based in Ottawa, Canada. I love being creative and want to take challenges. To me, being a graphic designer, not just make the world pretty but to help people solve design-related problems in a smart and unique way. My strengths are designing  product labels, logos, packages and illustrating.</p>
+        <p>Please refer to the portfolio section for examples of my work and don’t hesitate to give me a shout if you have any questions or just want to say hello.</p>
+    </div>
+</section>
+<section class="portfolio">
+    <h2 class="ribbon">Portfolio</h2>
 
 
-<h1>Quynh Nguyen's Website</h1>
+    <div id="portfolio_grid">
+        <div class="item">
+            <img src="images/portfolio/anikalogo_s.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/annual_report_small.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/Crossword_small.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/deppthought_logo_small.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/go-with-the-flow-small.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/gymboree.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/happytale_small.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/kochu.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/luna_small.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/quotebook_small.png">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/saralogo_s.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+        <div class="item">
+            <img src="images/portfolio/tiffany.jpg">
+            <div class="item_desc">Description goes here</div>
+        </div>
+    </div>
 
+</section>
+<section class="contact">
+    <div class="grid">
+        <div class="unit unit-m-1 unit-l-1-2">
+            <h2 class="ribbon">Contact Me <i class="fa fa-paper-plane fa-2x"></i></h2>
+        </div>
+        <div class="unit unit-m-1 unit-l-1-2">
+            <p>Please give me a shout if you have any questions or just want to say hello!</p>
+        </div>
+    </div>
+    <ul class="contacts">
+        <li><i class="fa fa-envelope-o fa-2x"></i> tquynh1112@yahoo.com</li>
+        <li><i class="fa fa-phone fa-2x"></i> 613.620.2408</li>
+    </ul>
+</section>
+<footer>
+    2014 Quynh Nguyen
+</footer>
+
+<div id="portfolio-mask"></div>
 </body>
 </html>

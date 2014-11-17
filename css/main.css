@@ -1,0 +1,213 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    background: #f6f6f6;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 4rem;
+    text-align: center;
+    color: #353535;
+    border-bottom: #6bc3a0 3px solid;
+    z-index: 10;
+}
+
+header .nav {
+    list-style: none;
+    float: left;
+}
+
+header .nav li {
+    float: left;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+header .nav li.active {
+    border-bottom: 3px #fc545f solid;
+}
+
+header .nav li a {
+    color: #353535;
+    padding: 20px 5px;
+    display: inline-block;
+}
+
+header .nav li a:hover {
+    color: #fc545f;
+}
+
+header .logo {
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    background: url(../images/logo.png) no-repeat;
+    background-size: cover;
+    margin: 0.5rem 0 0 -3rem;
+}
+
+header .header_right {
+    float: right;
+    margin: 15px 30px;
+}
+
+header .header_right .name {
+    display: inline-block;
+    border-right: 3px #6bc3a0 solid;
+    padding: 5px;
+}
+
+header .header_right .social-icon {
+    background: #323232;
+    width: 30px;
+    height: 30px;
+    margin: 0px 2px;
+    display: inline-block;
+}
+
+header .header_right .social-icon i {
+    color: #f6f6f6;
+}
+
+section .ribbon {
+    padding: 0px 0px 0px 100px;
+    font-size: 2rem;
+    width: 266px;
+    height: 73px;
+    margin-right: 30px;
+}
+
+section.slideshow {
+    margin-top: 4rem;
+    background: url(../images/diagmonds.png);
+    color: #fff;
+    padding: 2rem 4rem;
+}
+
+section.about {
+    background: #fc545f;
+    padding: 2rem 0;
+    color: #fff;
+}
+
+section.about h2 {
+    background: url(../images/ribbon_aboutme.png) no-repeat;
+    color: #353535;
+}
+
+section.about p, section.contact p {
+    margin: 0 2rem 1em 3rem;
+}
+
+section.portfolio {
+    background: url(../images/diagmonds.png);
+    padding: 2rem 0;
+    border-top: 3px #6bc3a0 solid;
+}
+
+section.portfolio #portfolio_grid {
+    margin: 0 3rem;
+    padding: 0;
+    list-style: none;
+}
+
+section.portfolio #portfolio_grid .item {
+    width: 200px;
+    cursor: pointer;
+    position: relative;
+}
+
+section.portfolio #portfolio_grid .item .item_desc {
+    position: absolute;
+    left: 0px;
+    bottom: 7px;
+    width: 90%;
+    padding: 5px 5%;
+    color: #fff;
+    background: rgba(0, 0, 0, .7);
+    font-size: 75%;
+    opacity: 0;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+section.portfolio #portfolio_grid .item:hover .item_desc {
+    opacity: 1;
+}
+
+section.portfolio #portfolio_grid .item img {
+    width: 100%;
+}
+
+section.portfolio #portfolio_grid .item img:hover {
+    opacity: .5;
+}
+
+section.portfolio h2 {
+    background: url(../images/ribbon_portfolio.png) no-repeat;
+    color: #fff;
+}
+
+section.contact {
+    background: #6bc3a0;
+    padding: 2rem 0;
+    color: #fff;
+}
+
+section.contact h2 {
+    background: url(../images/ribbon_contact.png) no-repeat;
+    width: 436px;
+    color: #353535;
+    position: relative;
+}
+
+section.contact h2 i {
+    color: #fff;
+    padding: 15px;
+    background: #fc545f;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    right: 70px;
+}
+
+section.contact .contacts {
+    list-style: none;
+}
+
+section.contact .contacts li {
+    margin-bottom: 20px;
+}
+
+section.contact .contacts li i {
+    color: #fff;
+    padding: 10px;
+    background: #fc545f;
+    border-radius: 50%;
+}
+
+footer {
+    background: #3f3f3f;
+    color: #fff;
+    font-size: 80%;
+    padding: 10px 40px;
+}
+
+#portfolio-mask {
+    position: fixed;
+    background: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: none;
+}
