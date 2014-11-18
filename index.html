@@ -42,7 +42,15 @@
                 wall.fitWidth();
             });
 
+            $('#portfolio_grid .item').click(function(){
+                $('#mask').fadeIn();
+                $('#port_' + $(this).attr('data-id')).fadeIn();
+            });
 
+            $('#mask').click(function(){
+                $('#mask').fadeOut();
+                $('.portfolio_overlay').fadeOut();
+            });
         });
     </script>
 
@@ -109,7 +117,7 @@
             <img src="images/portfolio/go-with-the-flow-small.jpg">
             <div class="item_desc">Description goes here</div>
         </div>
-        <div class="item">
+        <div class="item" data-id="gymboree">
             <img src="images/portfolio/gymboree.jpg">
             <div class="item_desc">Description goes here</div>
         </div>
@@ -158,6 +166,20 @@
     2014 Quynh Nguyen
 </footer>
 
-<div id="portfolio-mask"></div>
+<div id="mask"></div>
+<div class="portfolio_overlay" id="port_gymboree">
+    <div class="grid">
+        <div class="portfolio_images unit unit-m-1 unit-l-1-3 unit-xl-1-4">
+            <img src="images/portfolio/gymboree.jpg">
+            <img src="images/portfolio/gymboree.jpg">
+            <img src="images/portfolio/gymboree.jpg">
+            <img src="images/portfolio/gymboree.jpg">
+        </div>
+        <div class="unit unit-m-1 unit-l-2-3 unit-xl-3-4">
+            <p>My name is Quynh Nguyen, I am a graphic design and multimedia specialist based in Ottawa, Canada. I love being creative and want to take challenges. To me, being a graphic designer, not just make the world pretty but to help people solve design-related problems in a smart and unique way. My strengths are designing  product labels, logos, packages and illustrating.</p>
+            <p>Please refer to the portfolio section for examples of my work and don’t hesitate to give me a shout if you have any questions or just want to say hello.</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
