@@ -16,7 +16,7 @@ header {
     height: 4rem;
     text-align: center;
     color: #353535;
-    border-bottom: #6bc3a0 3px solid;
+    border-bottom: #fc545f 5px solid;
     z-index: 10;
 }
 
@@ -32,12 +32,20 @@ header .nav li {
 }
 
 header .nav li.active {
-    border-bottom: 3px #fc545f solid;
+    background: #fc545f;
+}
+
+header .nav li.active a {
+    color: #fff;
+}
+
+header .nav li.active a:hover {
+    color: #fff;
 }
 
 header .nav li a {
     color: #353535;
-    padding: 20px 5px;
+    padding: 22px 10px;
     display: inline-block;
 }
 
@@ -78,11 +86,10 @@ header .header_right .social-icon i {
 }
 
 section .ribbon {
-    padding: 0px 0px 0px 100px;
     font-size: 2rem;
-    width: 266px;
-    height: 73px;
-    margin-right: 30px;
+    margin: 0 3rem 2rem 3rem;
+    border-bottom: 5px #fc545f solid;
+    display: inline-block;
 }
 
 section.slideshow {
@@ -93,14 +100,13 @@ section.slideshow {
 }
 
 section.about {
-    background: #fc545f;
+    background: url(../images/diagmonds.png);
     padding: 2rem 0;
     color: #fff;
 }
 
 section.about h2 {
-    background: url(../images/ribbon_aboutme.png) no-repeat;
-    color: #353535;
+    color: #fff;
 }
 
 section.about p, section.contact p {
@@ -108,7 +114,7 @@ section.about p, section.contact p {
 }
 
 section.portfolio {
-    background: url(../images/diagmonds.png);
+    background: #f6f6f6;
     padding: 2rem 0;
     border-top: 3px #6bc3a0 solid;
 }
@@ -153,31 +159,13 @@ section.portfolio #portfolio_grid .item img:hover {
 }
 
 section.portfolio h2 {
-    background: url(../images/ribbon_portfolio.png) no-repeat;
-    color: #fff;
+    color: #000;
 }
 
 section.contact {
-    background: #6bc3a0;
+    background: #f6f6f6;
     padding: 2rem 0;
-    color: #fff;
-}
-
-section.contact h2 {
-    background: url(../images/ribbon_contact.png) no-repeat;
-    width: 436px;
-    color: #353535;
-    position: relative;
-}
-
-section.contact h2 i {
-    color: #fff;
-    padding: 15px;
-    background: #fc545f;
-    border-radius: 50%;
-    position: absolute;
-    top: -15px;
-    right: 70px;
+    color: #000;
 }
 
 section.contact .contacts {
@@ -218,14 +206,15 @@ footer {
     z-index: 200;
     position: absolute;
     left: 0px;
-    top: 600px;
+    top: 780px;
     color: #fff;
     display: none;
+    text-align: center;
 }
 
-#portfolio_overlay .portfolio_images img {
-    width: 200px;
-    margin: 0 2rem 1rem 2rem;
+.portfolio_overlay p {
+    margin: 0 20%;
+    font-size: 80%;
 }
 
 @media (max-width: 38em) {
