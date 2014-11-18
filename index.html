@@ -19,57 +19,14 @@
     <script src="js/jquery.js"></script>
     <script src="js/freewall.js"></script>
     <script src="js/jquery.slick.js"></script>
-
-    <script>
-        $(document).ready(function(){
-            $('#slideshow-container').slick({
-                dots: true
-            });
-
-            var wall = new freewall("#portfolio_grid");
-            wall.reset({
-                selector: '.item',
-                animate: true,
-                cellW: 200,
-                cellH: 'auto',
-                onResize: function() {
-                    wall.fitWidth();
-                }
-            });
-
-            var images = wall.container.find('.item');
-            images.find('img').load(function() {
-                wall.fitWidth();
-            });
-
-            $('#portfolio_grid .item').click(function(){
-                $('#mask').fadeIn();
-                $('#port_' + $(this).attr('data-id')).fadeIn();
-
-                $('.portfolio_slide').slick({
-                    dots: true,
-                    prevArrow: '',
-                    nextArrow: '',
-                    lazyLoad: 'ondemand'
-                });
-            });
-
-            $('#mask').click(function(){
-                $('#mask').fadeOut();
-                $('.portfolio_overlay').fadeOut();
-            });
-
-
-        });
-    </script>
-
+    <script src="js/main.js"></script>
 </head>
 <body>
 <header>
     <ul class="nav">
-        <li><a href="#">Portfolio</a></li>
-        <li class="active"><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#" class="logo"></a>
     <div class="header_right">
@@ -79,7 +36,13 @@
         <a href="https://www.behance.net/mBluebear" target="_blank" class="social-icon"><i class="fa fa-behance"></i></a>
         <a href="ca.linkedin.com/pub/quynh-nguyen/64/592/2a1/" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
     </div>
+    <a href="#"><i class="fa fa-bars fa-3x" id="phone-nav"></i></a>
 </header>
+<nav data-role="navigation" id="mobile-nav">
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
 <section class="slideshow">
     <div id="slideshow-container">
         <div>
@@ -92,62 +55,62 @@
         </div>
     </div>
 </section>
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
     <h2 class="ribbon">Portfolio</h2>
 
 
     <div id="portfolio_grid">
         <div class="item" data-id="anika">
-            <img src="images/portfolio/anikalogo_s.jpg">
+            <img src="images/portfolio/anikalogo_s.jpg" alt="Anika">
             <div class="item_desc">Anika Florist Logo</div>
         </div>
         <div class="item" data-id="deepthought">
-            <img src="images/portfolio/deppthought_logo_small.jpg">
+            <img src="images/portfolio/deppthought_logo_small.jpg" alt="Deep Thought">
             <div class="item_desc">Deep Thought Logo Design</div>
         </div>
         <div class="item" data-id="luna">
-            <img src="images/portfolio/luna_small.jpg">
+            <img src="images/portfolio/luna_small.jpg" alt="Luna">
             <div class="item_desc">Editorial Illustration for Raw Food Diet</div>
         </div>
         <div class="item" data-id="crossword">
-            <img src="images/portfolio/Crossword_small.jpg">
+            <img src="images/portfolio/Crossword_small.jpg" alt="Crossword">
             <div class="item_desc">Puzzle Jungle</div>
         </div>
         <div class="item" data-id="flow">
-            <img src="images/portfolio/go-with-the-flow-small.jpg">
+            <img src="images/portfolio/go-with-the-flow-small.jpg" alt="Flow">
             <div class="item_desc">Layout Concept</div>
         </div>
         <div class="item" data-id="cirque">
-            <img src="images/portfolio/annual_report_small.jpg">
+            <img src="images/portfolio/annual_report_small.jpg" alt="Cirque">
             <div class="item_desc">Cirque du Soleil Financial Report</div>
         </div>
         <div class="item" data-id="winnie">
-            <img src="images/portfolio/quotebook_small.png">
+            <img src="images/portfolio/quotebook_small.png" alt="Winnie">
             <div class="item_desc">Beautiful Quotes from Winnie the Pooth</div>
         </div>
         <div class="item" data-id="kochu">
-            <img src="images/portfolio/kochu.jpg">
+            <img src="images/portfolio/kochu.jpg" alt="Kochu">
             <div class="item_desc">Kochu App</div>
         </div>
         <div class="item" data-id="gymboree">
-            <img src="images/portfolio/gymboree.jpg">
+            <img src="images/portfolio/gymboree.jpg" alt="Gymboree">
             <div class="item_desc">Gift card package design for Gymboree Retail company</div>
         </div>
         <div class="item" data-id="tiffany">
-            <img src="images/portfolio/tiffany.jpg">
-            <div class="item_desc">Ad campaign for Tiffany & Co.</div>
+            <img src="images/portfolio/tiffany.jpg" alt="Tiffany">
+            <div class="item_desc">Ad campaign for Tiffany &amp; Co.</div>
         </div>
         <div class="item" data-id="sara">
-            <img src="images/portfolio/saralogo_s.jpg">
+            <img src="images/portfolio/saralogo_s.jpg" alt="Sara">
             <div class="item_desc">Sara Beauty logo design</div>
         </div>
         <div class="item" data-id="rabbit">
-            <img src="images/portfolio/rabbit_small.jpg">
+            <img src="images/portfolio/rabbit_small.jpg" alt="Rabbit">
             <div class="item_desc">Block Printing -The Velveteen Rabbit</div>
         </div>
     </div>
 </section>
-<section class="about grid">
+<section class="about grid" id="about">
     <div class="unit unit-m-1 unit-l-1-3 unit-xl-1-4">
         <h2 class="ribbon">About Me</h2>
     </div>
@@ -156,7 +119,7 @@
         <p>Please refer to the portfolio section for examples of my work and don’t hesitate to give me a shout if you have any questions or just want to say hello.</p>
     </div>
 </section>
-<section class="contact">
+<section class="contact" id="contact">
     <div class="grid">
         <div class="unit unit-m-1 unit-l-1-3">
             <h2 class="ribbon">Contact Me</h2>
@@ -178,90 +141,90 @@
 
 <div class="portfolio_overlay" id="port_anika">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/anika/anika_businesscard.jpg"></div>
-        <div><img data-lazy="images/portfolio/anika/anika_shoppingbag.jpg"></div>
-        <div><img data-lazy="images/portfolio/anika/anikalogo_1.jpg"></div>
+        <div><img src="images/portfolio/anika/anika_businesscard.jpg" alt="Anika"></div>
+        <div><img src="images/portfolio/anika/anika_shoppingbag.jpg" alt="Anika"></div>
+        <div><img src="images/portfolio/anika/anikalogo_1.jpg" alt="Anika"></div>
     </div>
     <p>Anika is a Ottawa - based florist with a lovely variety of fresh flowers, silk flowers and creative gift ideas to suit any style or budget.In this project I want to focus on the freshness and beautiful of a blooming flower. Thus I put a blooming daisy on the last letter a in order to create a fresh and beautiful look.</p>
 </div>
 
 <div class="portfolio_overlay" id="port_deepthought">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/deepthought/deepthough_tshirt.jpg"></div>
-        <div><img data-lazy="images/portfolio/deepthought/deppthought_real_tshirt.jpg"></div>
-        <div><img data-lazy="images/portfolio/deepthought/wallpaper.jpg"></div>
+        <div><img src="images/portfolio/deepthought/deepthough_tshirt.jpg" alt="Deep Thought"></div>
+        <div><img src="images/portfolio/deepthought/deppthought_real_tshirt.jpg" alt="Deep Thought"></div>
+        <div><img src="images/portfolio/deepthought/wallpaper.jpg" alt="Deep Thought"></div>
     </div>
     <p>This is a logo for Deep thought Studio. Since this studio makes puzzle games (Crossword, Word search and Sudoku) for phone and tablet, I draw an Octopus wraps his tentacles around the word “deep thought”. I chose a rough font which represents rock for the word “deep thought”. Meanwhile, I put gradient on the word deep thought in order to show the “deep”. Besides, I use Orange for the octopus because orange is very catching and full of energy. It would help grab attention of the viewers.</p>
 </div>
 
 <div class="portfolio_overlay" id="port_crossword">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/crossword/crossword.jpg"></div>
-        <div><img data-lazy="images/portfolio/crossword/owl.jpg"></div>
+        <div><img src="images/portfolio/crossword/crossword.jpg" alt="Crossword"></div>
+        <div><img src="images/portfolio/crossword/owl.jpg" alt="Crossword"></div>
     </div>
     <p>This is a concept art for a puzzle game ui. The game consists of four individual games (crossword, word search, sudoku and cross number) and tournament events. I created the game ui based on the owl theme since own is reputable for smart and wisdom in the animal kingdom. I also chose a fun whimsical typeface to fit the theme better.</p>
 </div>
 
 <div class="portfolio_overlay" id="port_flow">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/flow/go-with-the-flow.jpg"></div>
-        <div><img data-lazy="images/portfolio/flow/go-with-the-flow-2.jpg"></div>
+        <div><img src="images/portfolio/flow/go-with-the-flow.jpg" alt="Flow"></div>
+        <div><img src="images/portfolio/flow/go-with-the-flow-2.jpg" alt="Flow"></div>
     </div>
     <p>Layout concept for new magazine. Targeted demographic is young couples, in their 30s; pragmatic, practical, sensible, family-oriented, technologically savvy; like to invest in smart cutting-edge technology; have money to spend and invest.</p>
 </div>
 
 <div class="portfolio_overlay" id="port_cirque">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/cirque/COVER.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english2.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english3.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english4.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english5.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english6.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english7.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english8.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english9.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english10.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english11.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english12.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english13.jpg"></div>
-        <div><img data-lazy="images/portfolio/cirque/english14.jpg"></div>
+        <div><img src="images/portfolio/cirque/COVER.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english2.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english3.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english4.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english5.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english6.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english7.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english8.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english9.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english10.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english11.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english12.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english13.jpg" alt="Cirque"></div>
+        <div><img src="images/portfolio/cirque/english14.jpg" alt="Cirque"></div>
     </div>
     <p>In this project, the English and French Financial Report for Cirque du Soleil was created. This Canadian entertainment company is the largest theatrical producer in the world. Cirque du Soleil is a dramatic mix of circus arts and street entertainment. The show is performed by many talented artists. It’s full of energy and vividly beautiful. I want to deliver these characteristics in to the report. To achieve this, I decide to create an abstract pattern with different shades of orange red to portrait the company’s energy and spirit. Since this is a very big company, I want to make the annual report in a clean corporate style.</p>
 </div>
 
 <div class="portfolio_overlay" id="port_winnie">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/winnie/cover.jpg"></div>
-        <div><img data-lazy="images/portfolio/winnie/1st-page.jpg"></div>
-        <div><img data-lazy="images/portfolio/winnie/page-2.jpg"></div>
-        <div><img data-lazy="images/portfolio/winnie/page-2a.jpg"></div>
-        <div><img data-lazy="images/portfolio/winnie/page-3.jpg"></div>
-        <div><img data-lazy="images/portfolio/winnie/page-4.jpg"></div>
-        <div><img data-lazy="images/portfolio/winnie/page-6a.jpg"></div>
-        <div><img data-lazy="images/portfolio/winnie/page-6b.jpg"></div>
-        <div><img data-lazy="images/portfolio/winnie/page-7.jpg"></div>
-        <div><img data-lazy="images/portfolio/winnie/back.jpg"></div>
+        <div><img src="images/portfolio/winnie/cover.jpg" alt="Winnie"></div>
+        <div><img src="images/portfolio/winnie/1st-page.jpg" alt="Winnie"></div>
+        <div><img src="images/portfolio/winnie/page-2.jpg" alt="Winnie"></div>
+        <div><img src="images/portfolio/winnie/page-2a.jpg" alt="Winnie"></div>
+        <div><img src="images/portfolio/winnie/page-3.jpg" alt="Winnie"></div>
+        <div><img src="images/portfolio/winnie/page-4.jpg" alt="Winnie"></div>
+        <div><img src="images/portfolio/winnie/page-6a.jpg" alt="Winnie"></div>
+        <div><img src="images/portfolio/winnie/page-6b.jpg" alt="Winnie"></div>
+        <div><img src="images/portfolio/winnie/page-7.jpg" alt="Winnie"></div>
+        <div><img src="images/portfolio/winnie/back.jpg" alt="Winnie"></div>
     </div>
     <p>The theme of my booklet is love and friendship in the magical world of Winnie the Pooh. I was inspired by those heartbreakingly adorable quotes from the Winnie The Pooh cartoon. Thus, I decided to make a booklet for it. Handmade type was explored in this booklet. I use type and illustration to convey the meaning of each distinct quote and spirit of Winnie the Pooh. I made the whole booklet by hand using watercolour and pen. In addition, I experimented with different popup technique in order to make it looks interesting and engaging.</p>
 </div>
 
 <div class="portfolio_overlay" id="port_luna">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/luna/rawfooddiet.jpg"></div>
+        <div><img src="images/portfolio/luna/rawfooddiet.jpg" alt="Rabbit"></div>
     </div>
     <p>I strongly support raw food diet for dog. To me, my dog is part of my family. I believe that they need to be feed healthy and tasty food such as raw meat and bone like their ancestor used to have. Thus, I make this illustration to support what I believe in.</p>
 </div>
 
 <div class="portfolio_overlay" id="port_kochu">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/kochu/kochuapp_1.jpg"></div>
-        <div><img data-lazy="images/portfolio/kochu/kochuapp_2.jpg"></div>
-        <div><img data-lazy="images/portfolio/kochu/kochuapp_3.jpg"></div>
-        <div><img data-lazy="images/portfolio/kochu/kochuapp_4.jpg"></div>
-        <div><img data-lazy="images/portfolio/kochu/kochuapp_5.jpg"></div>
-        <div><img data-lazy="images/portfolio/kochu/kochuapp_6.jpg"></div>
+        <div><img src="images/portfolio/kochu/kochuapp_1.jpg" alt="Kochu"></div>
+        <div><img src="images/portfolio/kochu/kochuapp_2.jpg" alt="Kochu"></div>
+        <div><img src="images/portfolio/kochu/kochuapp_3.jpg" alt="Kochu"></div>
+        <div><img src="images/portfolio/kochu/kochuapp_4.jpg" alt="Kochu"></div>
+        <div><img src="images/portfolio/kochu/kochuapp_5.jpg" alt="Kochu"></div>
+        <div><img src="images/portfolio/kochu/kochuapp_6.jpg" alt="Kochu"></div>
     </div>
     <p>Kochu-Res is an IOS app for Kochu, a restaurant specializes in Japanese and Korean cuisine. This app allows user to: (1) order food by using the phone, (2) order ahead of time and (3) be able to cancel the order two hours before the pick-up/delivery time, (4) see the menu in offline mode. In addition, the past order is also saved for future use. Moreover, the apps itself allows user to select the method of payments (Paypal, cash, credit and debit). It is so convenient for people with busy lifestyle. It eliminates time spent reading out the whole menu, unexpected price total, and etc.</p>
 </div>
@@ -269,22 +232,22 @@
 <div class="portfolio_overlay" id="port_gymboree">
     <div class="portfolio_slide">
         <div><iframe src="http://player.vimeo.com/video/84941072" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
-        <div><img data-lazy="images/portfolio/gymboree/envelop_exterior.jpg"></div>
-        <div><img data-lazy="images/portfolio/gymboree/packagedesign.jpg"></div>
-        <div><img data-lazy="images/portfolio/gymboree/packagedesign_back.jpg"></div>
-        <div><img data-lazy="images/portfolio/gymboree/packagemockup.jpg"></div>
-        <div><img data-lazy="images/portfolio/gymboree/sticker.jpg"></div>
+        <div><img src="images/portfolio/gymboree/envelop_exterior.jpg" alt="Gymboree"></div>
+        <div><img src="images/portfolio/gymboree/packagedesign.jpg" alt="Gymboree"></div>
+        <div><img src="images/portfolio/gymboree/packagedesign_back.jpg" alt="Gymboree"></div>
+        <div><img src="images/portfolio/gymboree/packagemockup.jpg" alt="Gymboree"></div>
+        <div><img src="images/portfolio/gymboree/sticker.jpg" alt="Gymboree"></div>
     </div>
     <p>A gift card package for Gymboree & Co., a retailer of high quality children’s apparel and accessories, was created in this project. In fact, Gymboree sells children apparel and accessories, which contains bright colours and cute patterns to attract the 0 to12 year-old kids. I want to create a gift card package goes well with the company product. To do that, I decide to make the gift card package in the mouse and cheese theme. My gift card contains pattern that looks like a piece of cheese. Meanwhile, the gift card package is a happy face of a mouse. The mouse’s mouth serves as a window so that when the gift card is slid inside, it still shows through.</p>
 </div>
 
 <div class="portfolio_overlay" id="port_tiffany">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/tiffany/color_print_ads.jpg"></div>
-        <div><img data-lazy="images/portfolio/tiffany/color_print_ads2.jpg"></div>
-        <div><img data-lazy="images/portfolio/tiffany/facebook_timeline.jpg"></div>
-        <div><img data-lazy="images/portfolio/tiffany/web_banner_leather_board.jpg"></div>
-        <div><img data-lazy="images/portfolio/tiffany/web_banner_skyscaper.jpg"></div>
+        <div><img src="images/portfolio/tiffany/color_print_ads.jpg" alt="Tiffany"></div>
+        <div><img src="images/portfolio/tiffany/color_print_ads2.jpg" alt="Tiffany"></div>
+        <div><img src="images/portfolio/tiffany/facebook_timeline.jpg" alt="Tiffany"></div>
+        <div><img src="images/portfolio/tiffany/web_banner_leather_board.jpg" alt="Tiffany"></div>
+        <div><img src="images/portfolio/tiffany/web_banner_skyscaper.jpg" alt="Tiffany"></div>
     </div>
     <p>Monogamy is quite rare in animal kingdom. However, there are some scarce species which form monogamous pair bonds that last for many years or even for their whole lives. French angel fish , Adele penguin and swan are one of those faithful animals which I found very inspiring.
         In this project, an advertising campaign for Tiffany &Co. was created; the theme of the campaign was engagement and the target audiences are young couples who are around 20 to 30 years old.
@@ -294,9 +257,9 @@
 
 <div class="portfolio_overlay" id="port_sara">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/sara/sara_logo.jpg"></div>
-        <div><img data-lazy="images/portfolio/sara/sarabeauty_branding.jpg"></div>
-        <div><img data-lazy="images/portfolio/sara/sarabeauty_shoppingbag.jpg"></div>
+        <div><img src="images/portfolio/sara/sara_logo.jpg" alt="Sara"></div>
+        <div><img src="images/portfolio/sara/sarabeauty_branding.jpg" alt="Sara"></div>
+        <div><img src="images/portfolio/sara/sarabeauty_shoppingbag.jpg" alt="Sara"></div>
     </div>
     <p>Sara Beauty is a home based Spa Business in Nepean/ Ottawa area. It was established two years ago. In this project, a new logo is designed for Sara
         Beauty to help the company image becomes more professional to stand out from other home spas in the area.
@@ -306,7 +269,7 @@
 
 <div class="portfolio_overlay" id="port_rabbit">
     <div class="portfolio_slide">
-        <div><img data-lazy="images/portfolio/rabbit/velveteen_rabbit.jpg"></div>
+        <div><img src="images/portfolio/rabbit/velveteen_rabbit.jpg" alt="Rabbit"></div>
     </div>
     <p>This is an illustration for the scene when the little rabbit lay in a sack among other rubbish. They all will be burnt the next day. He lays there and feels very lonely; he thinks of the happy times he spent with the boy and cries.</p>
 </div>

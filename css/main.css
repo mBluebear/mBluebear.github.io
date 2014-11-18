@@ -69,16 +69,24 @@ header .header_right {
 
 header .header_right .name {
     display: inline-block;
-    border-right: 3px #6bc3a0 solid;
+    border-right: 3px #fc545f solid;
     padding: 5px;
 }
 
 header .header_right .social-icon {
     background: #323232;
     width: 30px;
-    height: 30px;
+    height: 31px;
     margin: 0px 2px;
     display: inline-block;
+    -webkit-transition: .2s;
+    transition: .2s;
+    padding: 3px;
+    line-height: 1.7;
+}
+
+header .header_right .social-icon:hover {
+    background: #fc545f;
 }
 
 header .header_right .social-icon i {
@@ -116,7 +124,6 @@ section.about p, section.contact p {
 section.portfolio {
     background: #f6f6f6;
     padding: 2rem 0;
-    border-top: 3px #6bc3a0 solid;
 }
 
 section.portfolio #portfolio_grid {
@@ -217,8 +224,62 @@ footer {
     font-size: 80%;
 }
 
-@media (max-width: 38em) {
-    header .nav {
+#phone-nav {
+    display: none;
+}
+
+#mobile-nav {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
+
+#mobile-nav a {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    background: #fc545f;
+    color: #fff;
+    border-bottom: 1px #000000 solid;
+
+}
+
+@media (max-width: 60em) {
+    .slick-slide img {
+        width: 100%;
+    }
+    .portfolio_overlay p {
+        margin: 0 10%;
+    }
+}
+
+@media (max-width: 42em) {
+    header .nav, header .logo, header .header_right .social-icon {
         display: none;
+    }
+    header .header_right {
+        float: left;
+    }
+    header .header_right .name {
+        border-right: none;
+    }
+    #phone-nav {
+        display: block;
+        float: right;
+        color: #000;
+        margin: .5rem;
+    }
+
+}
+
+@media (max-width: 25em) {
+    .slick-prev, .slick-next {
+        display: none !important;
+    }
+    section.slideshow {
+        padding: 2rem 0;
     }
 }
