@@ -224,6 +224,24 @@ footer {
     font-size: 80%;
 }
 
+.portfolio_overlay .portfolio_close {
+    position: absolute;
+    right: 10px;
+    top: -32px;
+    color: #ccc;
+}
+
+.portfolio_overlay .portfolio_close:hover {
+    color: #fff;
+}
+
+.portfolio_overlay .portfolio_slide .slick-prev {
+    left: 0px;
+}
+.portfolio_overlay .portfolio_slide .slick-next {
+    right: 0px;
+}
+
 #phone-nav {
     display: none;
 }

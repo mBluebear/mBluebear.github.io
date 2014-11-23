@@ -25,17 +25,17 @@ $(document).ready(function(){
         $('#port_' + $(this).attr('data-id')).css({top: $(this).offset().top + 'px'});
 
 
-        $('.portfolio_slide').slick({
+        $('#port_' + $(this).attr('data-id') + ' .portfolio_slide').slick({
             dots: true,
-            prevArrow: '',
-            nextArrow: '',
             //lazyLoad: 'ondemand'
         });
     });
 
-    $('#mask').click(function(){
+    $('.portfolio_close, #mask').click(function(){
         $('#mask').fadeOut();
         $('.portfolio_overlay').fadeOut();
+
+        return false;
     });
 
     $('#phone-nav').click(function(){
@@ -43,7 +43,7 @@ $(document).ready(function(){
         return false;
     });
 
-    $('.nav a, #mobile-nav a').click(function(){
+    $('.nav a, #mobile-nav a, .logo').click(function(){
         var xxx = $(this);
         $('html, body').animate({
             scrollTop: $(xxx.attr('href')).offset().top - 50
