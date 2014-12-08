@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="utf-8">
+    <title>Quynh Nguyen's Portfolio</title>
+    <meta name="handheldfriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Quynh Nguyen Portfolio" >
+
+    <link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/typography.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <script src="js/jquery.js"></script>
+
+    <style>
+        body {
+            background: url(images/diagmonds.png);
+            color: #fff;
+        }
+        .wrapper-404 {
+            max-width: 42em;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .wrapper-404 p {
+            margin: 2em;
+        }
+
+        .wrapper-404 a {
+            display: inline-block;
+            margin: 2em;
+            padding: 1em 2em;
+            color: #fff;
+            background: #fc545f;
+            box-shadow: 2px 2px 0px #000;
+        }
+
+        .wrapper-404 a:hover {
+            background: #fc2947;
+        }
+
+        .wrapper-404 img {
+            width: 16em;
+        }
+
+        .paws-div {
+            height: 4em;
+        }
+
+        .paw {
+            position: absolute;
+            background: url(images/404page_paw.png) no-repeat;
+            background-size: cover;
+            width: 2em;
+            height: 2em;
+            display: none;
+        }
+
+        .paw1 {
+            top: 10px;
+            left: 10px;
+        }
+
+        .paw2 {
+            top: 45px;
+            left: 35px;
+        }
+
+        .paw3 {
+            top: 55px;
+            left: 85px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $('.paw3').fadeIn('slow');
+            $('.paw2').delay(500).fadeIn('slow');
+            $('.paw1').delay(1000).fadeIn('slow');
+        });
+
+    </script>
+</head>
+<body>
+<div class="wrapper-404">
+    <div class="paws-div">
+        <div class="paw paw1"></div>
+        <div class="paw paw2"></div>
+        <div class="paw paw3"></div>
+    </div>
+    <p>Oopsss! A puppy has stolen this page.<br />Please go back to home page!</p>
+    <a href="index.html">Return to home page</a>
+    <p><img src="images/404page_puppy.png"></p>
+</div>
+
+
+</body>
+</html>

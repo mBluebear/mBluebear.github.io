@@ -188,6 +188,12 @@ section.contact .contacts li i {
     padding: 10px;
     background: #fc545f;
     border-radius: 50%;
+    width: 1em;
+    text-align: center;
+}
+
+section.contact .contacts li a:hover i {
+    background: #fc2947;
 }
 
 footer {
