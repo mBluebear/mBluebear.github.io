@@ -1,0 +1,20 @@
+#TEAM:
+
+Designer & developer: Quynh Nguyen
+E-mail: hello@quynhnguyen.ca
+Site: www.quynhnguyen.ca
+Gitbub: http://github.com/mBluebear
+Behance: www.behance.com/mBluebear
+Location: Ottawa, Canada
+
+---
+
+#THANKS
+
+Big Thanks for Thomas J Bradley and Cuong Nguyen for all the helps in making this website.
+
+#TECHNOLOGY
+
+- SubLime Text
+- Github
+- godaddy.com
